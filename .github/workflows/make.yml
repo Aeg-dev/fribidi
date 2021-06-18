@@ -16,6 +16,13 @@ jobs:
 
     steps:
     - run: PATH=$PATH:$(pwd)/fribidi/c2man/c2man-install
+    - name: macOS workaround
+      if: matrix.os == 'macos-latest'
+      run: |
+        clang --version
+        gcc --version
+        cc --version
+        xcode-select --install
     - uses: actions/checkout@v2
     - name: build c2man
       run: bash .ci/build-c2man.sh
