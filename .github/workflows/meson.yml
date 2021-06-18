@@ -2,7 +2,7 @@ name: Build with meson
 
 on:
   push:
-    branches: [ master, ci-run-test ]
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
