@@ -9,15 +9,14 @@ on:
 jobs:
   build:
     runs-on: ${{ matrix.os }}
-    strategy:
+    strategy: 
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
         compiler: [gcc]
         python-version: [3.6]
         include:
         - os: windows-latest
-          msvc: false
-        - os: windows-latest
+          compiler: [msvc]
           msvc: true
 
     steps:
