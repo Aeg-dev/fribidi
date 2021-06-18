@@ -12,8 +12,11 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        compiler: [gcc, clang]
+        compiler: [gcc]
         python-version: [3.6]
+        include:
+        - os: windows-latest
+          msvc: true
 
     steps:
     - uses: actions/checkout@v2
