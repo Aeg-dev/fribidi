@@ -12,8 +12,8 @@ jobs:
     strategy: 
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        compiler: gcc
-        python-version: 3.6
+        compiler: [gcc]
+        python-version: [3.6]
         include:
         - os: windows-latest
           compiler: msvc
